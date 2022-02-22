@@ -1,0 +1,101 @@
+// UI组件库 全局引入
+// SVGIcons 单包引入
+import {
+  Search,
+  Refresh,
+  Edit,
+  Delete,
+  Plus,
+  Promotion,
+} from "@element-plus/icons";
+//UI库 样式(官方强烈建议 全局引入样式)
+import "element-plus/dist/index.css";
+import {
+  ElButton,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElTabs,
+  ElTabPane,
+  ElCheckbox,
+  ElLink,
+  ElContainer,
+  ElHeader,
+  ElMain,
+  ElAside,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElIcon,
+  ElTable,
+  ElTableColumn,
+  ElPagination,
+  ElImage,
+  ElDialog,
+  ElTree,
+  ElCard,
+} from "element-plus";
+const components = [
+  ElButton,
+  ElForm,
+  ElFormItem,
+  ElInput,
+  ElTabs,
+  ElTabPane,
+  ElCheckbox,
+  ElLink,
+  ElContainer,
+  ElHeader,
+  ElMain,
+  ElAside,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
+  ElDropdown,
+  ElDropdownMenu,
+  ElDropdownItem,
+  ElAvatar,
+  ElRow,
+  ElCol,
+  ElSelect,
+  ElOption,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElIcon,
+  Search,
+  Refresh,
+  ElTable,
+  ElTableColumn,
+  Edit,
+  Delete,
+  Plus,
+  ElPagination,
+  ElImage,
+  ElDialog,
+  Promotion,
+  ElTree,
+  ElCard,
+];
+
+import { App } from "vue";
+
+export default function (app: App) {
+  // 全局注册组件
+  for (const item of components) {
+    app.component(item.name, item);
+  }
+}

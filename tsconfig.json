@@ -1,0 +1,46 @@
+{
+  // 编译选项
+  "compilerOptions": {
+    // 此时通过babel对ts编译（创建框架时，选择了babel）(babel通过.browserslistrc对文件中配置,对ts进行编译)
+    // 如果通过tsc编译ts需要注意选项值
+    // 1. esnext = es6+; 将ts编译为 es6+js
+    "target": "esnext",
+    // 2. 目标代码使用模块化方案（commonjs: require/modoule.exports）(ESModule: import/expost)(umd: 表示支持多种模块化方案)
+    "module": "esnext",
+    // 3. 严格模式
+    "strict": true,
+    // 4. 对jsx 如何处理 （preserve: 保留)
+    "jsx": "preserve",
+    // 5. 辅助导入功能
+    "importHelpers": true,
+    // 6. 按照node方式解析模块
+    "moduleResolution": "node",
+    // 7. 跳过对一些库的类型检测
+    "skipLibCheck": true,
+    // 8. common js 与 ESModule 混合使用 （两个选项一般同时设置）
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // 9. 生成映射文件
+    "sourceMap": true,
+    // 10. 文件路径在解析时，基本url
+    "baseUrl": ".",
+    // 11. 指定具体 解析使用的类型
+    "types": ["webpack-env"],
+    // 12. 路径解析 （类似于 webpack alias）
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    // 13. 指定项目中可以使用那些库中的类型（Proxy/Document/Windows）
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  // 14. 那些文件需要编译解析
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  // 15. 解析时排除那些文件
+  "exclude": ["node_modules"]
+}
